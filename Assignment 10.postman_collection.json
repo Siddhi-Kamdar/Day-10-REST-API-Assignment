@@ -1,0 +1,712 @@
+{
+  "info": {
+    "_postman_id": "b38a8d9a-a556-4b50-8ec0-a482e32ef514",
+    "name": "Assignment 10",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "51755888",
+    "_collection_link": "https://go.postman.co/collection/51755888-b38a8d9a-a556-4b50-8ec0-a482e32ef514?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "get all employees",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "X-AUTH-TOKEN",
+            "value": "my-secret-token",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "{{base_url}}/v1/employees",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "v1",
+            "employees"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "1",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/employees",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "employees"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Mon, 02 Feb 2026 11:14:44 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "[\n    {\n        \"emp_id\": 1,\n        \"emp_name\": \"hehe\",\n        \"emp_mail\": \"hehe123@gmail.com\",\n        \"emp_image_url\": \"https://blahblah\",\n        \"emp_contact_no\": \"9876543210\"\n    }\n]"
+        },
+        {
+          "name": "2",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/v1/employees",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "v1",
+                "employees"
+              ]
+            }
+          },
+          "status": "Unauthorized",
+          "code": 401,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Content-Length",
+              "value": "38"
+            },
+            {
+              "key": "Date",
+              "value": "Mon, 02 Feb 2026 17:36:07 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "Unauthorized: Invalid or missing token"
+        },
+        {
+          "name": "3",
+          "originalRequest": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-AUTH-TOKEN",
+                "value": "my-secret-token",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/v1/employees",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "v1",
+                "employees"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Mon, 02 Feb 2026 17:36:43 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "[\n    {\n        \"emp_id\": 2,\n        \"emp_name\": \"sidd\",\n        \"emp_mail\": \"sidd@mail.com\",\n        \"emp_image_url\": \"did it change\",\n        \"emp_contact_no\": \"8906735628\"\n    },\n    {\n        \"emp_id\": 4,\n        \"emp_name\": \"sidd\",\n        \"emp_mail\": \"sidd@mail.com\",\n        \"emp_image_url\": \"sdhfsdio\",\n        \"emp_contact_no\": \"8906735628\"\n    },\n    {\n        \"emp_id\": 5,\n        \"emp_name\": \"sidd\",\n        \"emp_mail\": \"sidd@mail.com\",\n        \"emp_image_url\": \"sdhfsdio\",\n        \"emp_contact_no\": \"8906735628\"\n    }\n]"
+        }
+      ]
+    },
+    {
+      "name": "open api docs",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/v3/api-docs",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "v3",
+            "api-docs"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "1",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/v3/api-docs",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "v3",
+                "api-docs"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Content-Length",
+              "value": "646"
+            },
+            {
+              "key": "Date",
+              "value": "Mon, 02 Feb 2026 11:16:00 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"openapi\": \"3.1.0\",\n    \"info\": {\n        \"title\": \"OpenAPI definition\",\n        \"version\": \"v0\"\n    },\n    \"servers\": [\n        {\n            \"url\": \"http://localhost:8080\",\n            \"description\": \"Generated server url\"\n        }\n    ],\n    \"paths\": {\n        \"/employees\": {\n            \"get\": {\n                \"tags\": [\n                    \"employee-controller\"\n                ],\n                \"operationId\": \"getEmployee\",\n                \"responses\": {\n                    \"200\": {\n                        \"description\": \"OK\",\n                        \"content\": {\n                            \"*/*\": {\n                                \"schema\": {\n                                    \"type\": \"array\",\n                                    \"items\": {\n                                        \"$ref\": \"#/components/schemas/EmplyoeeResponseDTO\"\n                                    }\n                                }\n                            }\n                        }\n                    }\n                }\n            }\n        }\n    },\n    \"components\": {\n        \"schemas\": {\n            \"EmplyoeeResponseDTO\": {\n                \"type\": \"object\",\n                \"properties\": {\n                    \"emp_id\": {\n                        \"type\": \"integer\",\n                        \"format\": \"int64\"\n                    },\n                    \"emp_name\": {\n                        \"type\": \"string\"\n                    },\n                    \"emp_mail\": {\n                        \"type\": \"string\"\n                    },\n                    \"emp_image_url\": {\n                        \"type\": \"string\"\n                    },\n                    \"emp_contact_no\": {\n                        \"type\": \"string\"\n                    }\n                }\n            }\n        }\n    }\n}"
+        }
+      ]
+    },
+    {
+      "name": "add employee",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"emp_name\": \"sidd\",\r\n    \"emp_mail\": \"sidd@mail.com\",\r\n    \"emp_image_url\": \"sdhfsdio\",\r\n    \"emp_contact_no\":\"8906735628\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base_url}}/v1/employees",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "v1",
+            "employees"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "1",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"emp_name\": \"sidd\",\r\n    \"emp_mail\": \"sidd@mail.com\",\r\n    \"emp_image_url\": \"sdhfsdio\",\r\n    \"emp_contact_no\":\"8906735628\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/employees",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "employees"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Mon, 02 Feb 2026 11:25:08 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"emp_id\": 2,\n    \"emp_name\": \"sidd\",\n    \"emp_mail\": \"sidd@mail.com\",\n    \"emp_image_url\": \"sdhfsdio\",\n    \"emp_contact_no\": \"8906735628\"\n}"
+        }
+      ]
+    },
+    {
+      "name": "put request",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"emp_name\": \"sidd\",\r\n    \"emp_mail\": \"sidd@mail.com\",\r\n    \"emp_image_url\": \"sdhfsdio\",\r\n    \"emp_contact_no\":\"8906735628\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base_url}}/v1/employees/1",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "v1",
+            "employees",
+            "1"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "1",
+          "originalRequest": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"emp_name\": \"sidd\",\r\n    \"emp_mail\": \"sidd@mail.com\",\r\n    \"emp_image_url\": \"sdhfsdio\",\r\n    \"emp_contact_no\":\"8906735628\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/v1/employees/1",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "v1",
+                "employees",
+                "1"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Mon, 02 Feb 2026 16:14:06 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"emp_id\": 1,\n    \"emp_name\": \"sidd\",\n    \"emp_mail\": \"sidd@mail.com\",\n    \"emp_image_url\": \"sdhfsdio\",\n    \"emp_contact_no\": \"8906735628\"\n}"
+        }
+      ]
+    },
+    {
+      "name": "delete employee",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "{{base_url}}/v1/employees/3",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "v1",
+            "employees",
+            "3"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "1",
+          "originalRequest": {
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "{{base_url}}/v1/employees/3",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "v1",
+                "employees",
+                "3"
+              ]
+            }
+          },
+          "status": "Not Found",
+          "code": 404,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain;charset=UTF-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "28"
+            },
+            {
+              "key": "Date",
+              "value": "Mon, 02 Feb 2026 16:28:37 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "Employee not found with id 3"
+        }
+      ]
+    },
+    {
+      "name": "get by id",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"emp_name\": \"sidd\",\r\n    \"emp_mail\": \"sidd@mail.com\",\r\n    \"emp_image_url\": \"sdhfsdio\",\r\n    \"emp_contact_no\":\"8906735628\"\r\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/v1/employees/1",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "v1",
+            "employees",
+            "1"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "1",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"emp_name\": \"sidd\",\r\n    \"emp_mail\": \"sidd@mail.com\",\r\n    \"emp_image_url\": \"sdhfsdio\",\r\n    \"emp_contact_no\":\"8906735628\"\r\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/v1/employees/2",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "v1",
+                "employees",
+                "2"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Mon, 02 Feb 2026 16:33:31 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"emp_id\": 2,\n    \"emp_name\": \"sidd\",\n    \"emp_mail\": \"sidd@mail.com\",\n    \"emp_image_url\": \"sdhfsdio\",\n    \"emp_contact_no\": \"8906735628\"\n}"
+        },
+        {
+          "name": "2",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"emp_name\": \"sidd\",\r\n    \"emp_mail\": \"sidd@mail.com\",\r\n    \"emp_image_url\": \"sdhfsdio\",\r\n    \"emp_contact_no\":\"8906735628\"\r\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/v1/employees/1",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "v1",
+                "employees",
+                "1"
+              ]
+            }
+          },
+          "status": "Not Found",
+          "code": 404,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain;charset=UTF-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "28"
+            },
+            {
+              "key": "Date",
+              "value": "Mon, 02 Feb 2026 16:33:54 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "Employee not found with id 1"
+        }
+      ]
+    },
+    {
+      "name": "patch",
+      "request": {
+        "method": "PATCH",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"emp_image_url\": \"did it change\",\r\n    \"emp_contact_no\":\"8906735628\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base_url}}/v1/employees/2",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "v1",
+            "employees",
+            "2"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "1",
+          "originalRequest": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"emp_image_url\": \"did it change\",\r\n    \"emp_contact_no\":\"8906735628\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/v1/employees/2",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "v1",
+                "employees",
+                "2"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Mon, 02 Feb 2026 16:35:18 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"emp_id\": 2,\n    \"emp_name\": \"sidd\",\n    \"emp_mail\": \"sidd@mail.com\",\n    \"emp_image_url\": \"did it change\",\n    \"emp_contact_no\": \"8906735628\"\n}"
+        }
+      ]
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "base_url",
+      "value": ""
+    }
+  ]
+}
