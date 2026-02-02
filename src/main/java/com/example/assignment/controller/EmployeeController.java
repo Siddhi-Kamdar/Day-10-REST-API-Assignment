@@ -4,6 +4,7 @@ import com.example.assignment.config.mapping.EmployeeMapper;
 import com.example.assignment.dto.request.EmployeeDto;
 import com.example.assignment.dto.response.EmplyoeeResponseDTO;
 import com.example.assignment.entity.Employee;
+import com.example.assignment.exception.ResourceNotFoundException;
 import com.example.assignment.repository.EmployeeRepository;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
@@ -36,7 +37,7 @@ public class EmployeeController {
     @GetMapping("/{id}")
     public ResponseEntity<EmplyoeeResponseDTO> getEmployeeById(@PathVariable Long id) {
         Employee employee = employeeRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Employee not found with id " + id));
+                .orElseThrow(() -> new ResourceNotFoundException("Employee not found with id " + id));
 
         return ResponseEntity.ok(EmployeeMapper.toDto(employee));
     }
@@ -59,7 +60,7 @@ public class EmployeeController {
             @Valid @RequestBody EmployeeDto employeeDto) {
 
         Employee existingEmployee = employeeRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Employee not found with id " + id));
+                .orElseThrow(() -> new ResourceNotFoundException("Employee not found with id " + id));
 
         existingEmployee.setEmp_name(employeeDto.getEmp_name());
         existingEmployee.setEmp_mail(employeeDto.getEmp_mail());
@@ -74,10 +75,40 @@ public class EmployeeController {
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteEmployee(@PathVariable Long id) {
         if (!employeeRepository.existsById(id)) {
-            throw new RuntimeException("Employee not found with id " + id);
+            throw new ResourceNotFoundException("Employee not found with id " + id);
         }
 
         employeeRepository.deleteById(id);
         return ResponseEntity.noContent().build();
+    }
+
+    @PatchMapping("/{id}")
+    public ResponseEntity<EmplyoeeResponseDTO> patchEmployee(
+            @PathVariable Long id,
+            @RequestBody EmployeeDto employeeDto) {
+
+        Employee employee = employeeRepository.findById(id)
+                .orElseThrow(() ->
+                        new ResourceNotFoundException("Employee not found with id " + id));
+
+        if (employeeDto.getEmp_name() != null) {
+            employee.setEmp_name(employeeDto.getEmp_name());
+        }
+
+        if (employeeDto.getEmp_mail() != null) {
+            employee.setEmp_mail(employeeDto.getEmp_mail());
+        }
+
+        if (employeeDto.getEmp_image_url() != null) {
+            employee.setEmp_image_url(employeeDto.getEmp_image_url());
+        }
+
+        if (employeeDto.getEmp_contact_no() != null) {
+            employee.setEmp_contact_no(employeeDto.getEmp_contact_no());
+        }
+
+        Employee updatedEmployee = employeeRepository.save(employee);
+
+        return ResponseEntity.ok(EmployeeMapper.toDto(updatedEmployee));
     }
 }
